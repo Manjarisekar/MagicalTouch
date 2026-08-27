@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Touch by Gayathri</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { background-color: #fdf6f6; color: #333; text-align: center; padding: 20px; }
+        h1 { color: #d63384; margin-bottom: 5px; }
+        p.subtitle { color: #666; margin-bottom: 25px; }
+
+        .container { max-width: 800px; margin: 0 auto; }
+        .section-title { font-size: 20px; color: #b8256e; margin: 30px 0 15px 0; border-bottom: 2px solid #ffccd5; display: inline-block; padding-bottom: 5px; }
+
+        /* Pricing Table */
+        table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background-color: #d63384; color: white; }
+
+        /* Gallery Grid */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+        /* Reviews */
+        .review-card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; text-align: left; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .review-card strong { color: #d63384; }
+
+        /* Booking Form */
+        form { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: left; margin-top: 20px; }
+        label { font-weight: bold; font-size: 14px; display: block; margin-top: 10px; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; }
+        button { background-color: #25D366; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 6px; margin-top: 20px; cursor: pointer; }
+        button:hover { background-color: #1eb954; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Magical Touch by Gayathri</h1>
+    <p class="subtitle">Bridal Makeup | Mehendi | Saree Draping | Nail Art</p>
+
+    <!-- Services & Pricing -->
+    <div class="section-title">Our Services & Pricing</div>
+    <table>
+        <tr><th>Service</th><th>Starting Price</th></tr>
+        <tr><td>Bridal Makeup</td><td>₹5,000 onwards</td></tr>
+        <tr><td>Mehendi Design (Bridal)</td><td>₹2,500 onwards</td></tr>
+        <tr><td>Saree Draping</td><td>₹500 onwards</td></tr>
+        <tr><td>Nail Art & Extensions</td><td>₹800 onwards</td></tr>
+    </table>
+
+    <!-- Photo Gallery Placeholders -->
+    <div class="section-title">Our Work Gallery</div>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400" alt="Bridal Makeup">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400" alt="Mehendi">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400" alt="Nail Art">
+    </div>
+
+    <!-- Customer Reviews -->
+    <div class="section-title">Client Reviews</div>
+    <div class="review-card">
+        <strong>★ ★ ★ ★ ★ - Priya R.</strong>
+        <p>"Gayathri did my bridal makeup. It was so natural and clean! Highly recommended."</p>
+    </div>
+    <div class="review-card">
+        <strong>★ ★ ★ ★ ★ - Anitha M.</strong>
+        <p>"Mehendi designs were extremely elegant and dark stain. Great work!"</p>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="section-title">Book An Appointment</div>
+    <form onsubmit="event.preventDefault(); sendBooking();">
+        <label>Your Name:</label>
+        <input type="text" id="name" required placeholder="Enter your name">
+
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" required placeholder="Enter your mobile number">
+
+        <label>Select Service:</label>
+        <select id="service">
+            <option value="Bridal Makeup">Bridal Makeup</option>
+            <option value="Mehendi Service">Mehendi Service</option>
+            <option value="Saree Draping">Saree Draping</option>
+            <option value="Nail Art & Gel Polish">Nail Art & Gel Polish</option>
+        </select>
+
+        <label>Event Date:</label>
+        <input type="date" id="date" required>
+
+        <label>Location / Notes:</label>
+        <textarea id="notes" rows="3" placeholder="Enter city or specific instructions"></textarea>
+
+        <button type="submit">Book via WhatsApp 📲</button>
+    </form>
+</div>
+
+<script>
+function sendBooking() {
+    let name = document.getElementById('name').value;
+    let phone = document.getElementById('phone').value;
+    let service = document.getElementById('service').value;
+    let date = document.getElementById('date').value;
+    let notes = document.getElementById('notes').value;
+
+    let myWhatsAppNumber = "916383819028";
+
+    let message = `Hello Gayathri! I want to book an appointment.%0A%0A` +
+                  `*Name:* ${encodeURIComponent(name)}%0A` +
+                  `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                  `*Service:* ${encodeURIComponent(service)}%0A` +
+                  `*Date:* ${encodeURIComponent(date)}%0A` +
+                  `*Notes:* ${encodeURIComponent(notes || 'None')}`;
+
+    let whatsappURL = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${message}`;
+    window.location.href = whatsappURL;
+}
+</script>
+
+</body>
+</html>
