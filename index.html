@@ -50,10 +50,12 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* Floating WhatsApp Button */
-        .floating-btn { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-        .float-wa { background: linear-gradient(135deg, #f1b814, #d4af37); color: #000; font-weight: bold; border-radius: 50px; padding: 12px 22px; text-decoration: none; box-shadow: 0 4px 15px rgba(212,175,55,0.4); font-size: 13px; display: flex; align-items: center; gap: 8px; transition: transform 0.2s; }
-        .float-wa:hover { transform: scale(1.05); }
+        /* --- Step 6: Luxury Dual Floating Action Buttons --- */
+        .floating-actions { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+        .float-btn { color: #000; font-weight: bold; border-radius: 50px; padding: 12px 20px; text-decoration: none; font-size: 13px; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+        .float-wa { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+        .float-call { background: linear-gradient(135deg, #f1b814, #d4af37); color: #000; box-shadow: 0 4px 15px rgba(212,175,55,0.4); }
+        .float-btn:hover { transform: scale(1.05); }
 
         /* Header Section */
         header { background: linear-gradient(rgba(14, 14, 14, 0.85), rgba(14, 14, 14, 0.9)), url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=1200') center/cover; text-align: center; padding: 80px 20px; border-bottom: 2px solid var(--gold-color); }
@@ -101,7 +103,7 @@
         .gallery-item:hover img { transform: scale(1.05); }
         .gallery-caption { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: #f1b814; font-size: 11px; padding: 6px; text-align: center; letter-spacing: 1px; }
 
-        /* --- Instagram Feed Section --- */
+        /* Instagram Feed Section */
         .insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
         .insta-post { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1; border: 1px solid var(--border-color); }
         .insta-post img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
@@ -130,9 +132,10 @@
 <!-- Theme Mode Switcher Button -->
 <button class="theme-toggle-btn" onclick="toggleTheme()">☀️ Light / 🌙 Dark</button>
 
-<!-- Floating WhatsApp Button -->
-<div class="floating-btn">
-    <a href="https://api.whatsapp.com/send?phone=916383819028" class="float-wa" target="_blank">📲 Direct WhatsApp Booking</a>
+<!-- Floating WhatsApp & Direct Call Buttons -->
+<div class="floating-actions">
+    <a href="tel:916383819028" class="float-btn float-call">📞 Call Now</a>
+    <a href="https://api.whatsapp.com/send?phone=916383819028" class="float-btn float-wa" target="_blank">💬 WhatsApp</a>
 </div>
 
 <header>
