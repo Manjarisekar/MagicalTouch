@@ -5,96 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magical Touch by Gayathri</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background-color: #fdf6f6; color: #333; text-align: center; padding: 20px; }
-        h1 { color: #d63384; margin-bottom: 5px; }
-        p.subtitle { color: #666; margin-bottom: 25px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Playfair Display', Georgia, serif; }
+        body { background-color: #faf6f0; color: #4a3b32; line-height: 1.6; }
 
-        .container { max-width: 800px; margin: 0 auto; }
-        .section-title { font-size: 20px; color: #b8256e; margin: 30px 0 15px 0; border-bottom: 2px solid #ffccd5; display: inline-block; padding-bottom: 5px; }
+        /* Header / Hero */
+        header { background-color: #ebdcd0; text-align: center; padding: 40px 20px; }
+        h1 { font-size: 32px; color: #3d2c23; margin-bottom: 8px; }
+        p.subtitle { font-size: 15px; color: #7a6354; font-style: italic; margin-bottom: 5px; }
+        p.location { font-size: 13px; color: #a84260; font-weight: bold; }
+
+        /* Navigation */
+        nav { background-color: #3d2c23; text-align: center; padding: 12px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #faf6f0; text-decoration: none; margin: 0 15px; font-size: 14px; font-family: sans-serif; font-weight: bold; }
+
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .section-title { font-size: 24px; color: #3d2c23; text-align: center; margin: 40px 0 20px 0; font-weight: bold; }
+
+        /* Service Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card { background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card h3 { color: #a84260; margin-bottom: 12px; font-size: 18px; }
+        .card ul { list-style-type: square; padding-left: 20px; font-size: 14px; color: #555; }
 
         /* Pricing Table */
-        table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background-color: #d63384; color: white; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-top: 10px; }
+        th, td { padding: 14px 18px; text-align: left; font-family: sans-serif; font-size: 14px; }
+        th { background-color: #3d2c23; color: #faf6f0; }
+        td { border-bottom: 1px solid #eee; }
+
+        /* Store Section */
+        .store-card { background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .btn-store { background-color: #b86b53; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; margin-top: 10px; cursor: pointer; }
 
         /* Gallery Grid */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
 
-        /* Reviews */
-        .review-card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; text-align: left; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .review-card strong { color: #d63384; }
+        /* Client Reviews */
+        .review-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-family: sans-serif; }
+        .review-card strong { color: #a84260; font-size: 15px; }
+        .review-card p { font-size: 14px; color: #555; margin-top: 5px; }
 
         /* Booking Form */
-        form { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: left; margin-top: 20px; }
-        label { font-weight: bold; font-size: 14px; display: block; margin-top: 10px; }
-        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; }
-        button { background-color: #25D366; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 6px; margin-top: 20px; cursor: pointer; }
-        button:hover { background-color: #1eb954; }
+        form { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); font-family: sans-serif; }
+        label { font-weight: bold; font-size: 13px; display: block; margin-top: 12px; color: #333; }
+        input, select, textarea { width: 100%; padding: 11px; margin-top: 6px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+        .btn-submit { background-color: #25D366; color: white; border: none; padding: 14px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 6px; margin-top: 22px; cursor: pointer; }
+
+        footer { text-align: center; padding: 30px; font-size: 13px; color: #888; font-family: sans-serif; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<header>
     <h1>Magical Touch by Gayathri</h1>
-    <p class="subtitle">Bridal Makeup | Mehendi | Saree Draping | Nail Art</p>
+    <p class="subtitle">Luxury Bridal Makeup | Mehendi Designer | Saree Draping | Nails</p>
+    <p class="location">📍 Nagercoil, Tamil Nadu (#OpenToTravel)</p>
+</header>
 
-    <!-- Services & Pricing -->
-    <div class="section-title">Our Services & Pricing</div>
-    <table>
-        <tr><th>Service</th><th>Starting Price</th></tr>
-        <tr><td>Bridal Makeup</td><td>₹5,000 onwards</td></tr>
-        <tr><td>Mehendi Design (Bridal)</td><td>₹2,500 onwards</td></tr>
-        <tr><td>Saree Draping</td><td>₹500 onwards</td></tr>
-        <tr><td>Nail Art & Extensions</td><td>₹800 onwards</td></tr>
-    </table>
+<nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#store">Henna Store</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#book">Book Now</a>
+</nav>
 
-    <!-- Photo Gallery Placeholders -->
-    <div class="section-title">Our Work Gallery</div>
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400" alt="Bridal Makeup">
-        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400" alt="Mehendi">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400" alt="Nail Art">
+<div class="container">
+
+    <!-- Signature Services -->
+    <div id="services" class="section-title">Our Signature Services</div>
+    <div class="grid">
+        <div class="card">
+            <h3>💄 Makeup Artistry</h3>
+            <ul>
+                <li>Bridal Makeup</li>
+                <li>Engagement Look</li>
+                <li>Party Makeup</li>
+                <li>Baby Shower Special</li>
+                <li>Guest & Bridesmaid Makeup</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>💇‍♀️ Hairstyling</h3>
+            <ul>
+                <li>Traditional Bridal Styling</li>
+                <li>Bridesmaid Hairstyles</li>
+                <li>Modern Buns & Braids</li>
+                <li>Accessory & Flower Draping</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🥻 Saree Styling</h3>
+            <ul>
+                <li>Saree Pre-Pleating</li>
+                <li>Custom Saree Draping</li>
+                <li>Signature Fluffy Pleats</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🌿 Mehendi Art</h3>
+            <ul>
+                <li>Intricate Bridal Mehendi</li>
+                <li>Non-Bridal / Guest Mehendi</li>
+                <li>Arabic & Traditional Patterns</li>
+                <li>Henna Educator Courses</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>💅 Nail Art & Extensions</h3>
+            <ul>
+                <li>Temporary Extensions</li>
+                <li>Premium Gel Polish</li>
+                <li>Durable Gel Extensions</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Customer Reviews -->
+    <!-- Pricing Table -->
+    <div id="pricing" class="section-title">Pricing Packages</div>
+    <table>
+        <tr><th>Service</th><th>Starting Price</th></tr>
+        <tr><td>Bridal Makeup Package</td><td>₹6,000 onwards</td></tr>
+        <tr><td>Bridal Mehendi Design</td><td>₹2,500 onwards</td></tr>
+        <tr><td>Party / Guest Makeup</td><td>₹1,500 onwards</td></tr>
+        <tr><td>Saree Pre-pleating & Draping</td><td>₹500 onwards</td></tr>
+        <tr><td>Nail Extensions & Art</td><td>₹800 onwards</td></tr>
+    </table>
+
+    <!-- Organic Henna Store -->
+    <div id="store" class="section-title">Organic Henna Store</div>
+    <div class="grid">
+        <div class="store-card">
+            <h3>🌿 Organic Henna Cones</h3>
+            <p style="font-size: 13px; color: #666; margin: 8px 0;">100% natural, deep stain guaranteed chemical-free cones.</p>
+            <button class="btn-store" onclick="document.getElementById('book').scrollIntoView();">Buy Henna Cones</button>
+        </div>
+        <div class="store-card">
+            <h3>✨ Henna Aftercare Balm</h3>
+            <p style="font-size: 13px; color: #666; margin: 8px 0;">Specially formulated balm for long-lasting dark mehendi stain.</p>
+            <button class="btn-store" onclick="document.getElementById('book').scrollIntoView();">Buy Aftercare Balm</button>
+        </div>
+    </div>
+
+    <!-- Work Gallery -->
+    <div id="gallery" class="section-title">Our Work Gallery</div>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400" alt="Bridal Look">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400" alt="Mehendi Design">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400" alt="Nail Art">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400" alt="Makeup Products">
+    </div>
+
+    <!-- Client Reviews -->
     <div class="section-title">Client Reviews</div>
     <div class="review-card">
         <strong>★ ★ ★ ★ ★ - Priya R.</strong>
-        <p>"Gayathri did my bridal makeup. It was so natural and clean! Highly recommended."</p>
+        <p>"Gayathri did my bridal makeup. It was so natural, elegant and clean! Highly recommended."</p>
     </div>
     <div class="review-card">
         <strong>★ ★ ★ ★ ★ - Anitha M.</strong>
-        <p>"Mehendi designs were extremely elegant and dark stain. Great work!"</p>
+        <p>"Mehendi designs were extremely intricate with rich stain. Loved the service!"</p>
     </div>
 
     <!-- Booking Form -->
-    <div class="section-title">Book An Appointment</div>
+    <div id="book" class="section-title">Book Your Appointment</div>
     <form onsubmit="event.preventDefault(); sendBooking();">
-        <label>Your Name:</label>
-        <input type="text" id="name" required placeholder="Enter your name">
+        <label>Your Full Name</label>
+        <input type="text" id="name" required placeholder="Enter your full name">
 
-        <label>Phone Number:</label>
-        <input type="tel" id="phone" required placeholder="Enter your mobile number">
+        <label>WhatsApp Phone Number</label>
+        <input type="tel" id="phone" required placeholder="Enter WhatsApp number">
 
-        <label>Select Service:</label>
+        <label>Select Service / Product</label>
         <select id="service">
             <option value="Bridal Makeup">Bridal Makeup</option>
-            <option value="Mehendi Service">Mehendi Service</option>
+            <option value="Party Makeup">Party Makeup</option>
+            <option value="Bridal Mehendi">Bridal Mehendi</option>
             <option value="Saree Draping">Saree Draping</option>
-            <option value="Nail Art & Gel Polish">Nail Art & Gel Polish</option>
+            <option value="Nail Art & Extensions">Nail Art & Extensions</option>
+            <option value="Organic Henna Cones">Organic Henna Cones</option>
+            <option value="Henna Aftercare Balm">Henna Aftercare Balm</option>
         </select>
 
-        <label>Event Date:</label>
+        <label>Event Date</label>
         <input type="date" id="date" required>
 
-        <label>Location / Notes:</label>
-        <textarea id="notes" rows="3" placeholder="Enter city or specific instructions"></textarea>
+        <label>Event Location / Extra Notes</label>
+        <textarea id="notes" rows="3" placeholder="Enter city or specific requirements"></textarea>
 
-        <button type="submit">Book via WhatsApp 📲</button>
+        <button type="submit" class="btn-submit">Submit Booking Request via WhatsApp 📲</button>
     </form>
+
 </div>
+
+<footer>
+    © 2026 Magical Touch by Gayathri. All Rights Reserved.
+</footer>
 
 <script>
 function sendBooking() {
@@ -106,12 +213,12 @@ function sendBooking() {
 
     let myWhatsAppNumber = "916383819028";
 
-    let message = `Hello Gayathri! I want to book an appointment.%0A%0A` +
+    let message = `Hello Gayathri! New Booking Enquiry:%0A%0A` +
                   `*Name:* ${encodeURIComponent(name)}%0A` +
                   `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                  `*Service:* ${encodeURIComponent(service)}%0A` +
+                  `*Service/Product:* ${encodeURIComponent(service)}%0A` +
                   `*Date:* ${encodeURIComponent(date)}%0A` +
-                  `*Notes:* ${encodeURIComponent(notes || 'None')}`;
+                  `*Location/Notes:* ${encodeURIComponent(notes || 'None')}`;
 
     let whatsappURL = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${message}`;
     window.location.href = whatsappURL;
