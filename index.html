@@ -284,4 +284,266 @@
     </div>
 
     <!-- Mehendi Category -->
-    <di
+    <div class="service-category-title">🌿 Mehendi Artistry</div>
+    <div class="service-grid">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400" alt="Mehendi" class="service-img">
+            <div class="service-content">
+                <div>
+                    <h4>Intricate Bridal Mehendi</h4>
+                    <p>Detailed storytelling motifs, portrait work, full-hand traditional and Arabic designs.</p>
+                </div>
+                <div class="service-footer">
+                    <span class="price-tag">₹2,500 onwards</span>
+                    <a href="#book" class="btn-card-book">Book Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400" alt="Nails" class="service-img">
+            <div class="service-content">
+                <div>
+                    <h4>Nail Extensions & Gel Polish</h4>
+                    <p>Temporary extensions, gel overlays, and bespoke nail art finish for weddings.</p>
+                </div>
+                <div class="service-footer">
+                    <span class="price-tag">₹800 onwards</span>
+                    <a href="#book" class="btn-card-book">Book Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MINI E-COMMERCE SHOP SECTION -->
+    <div class="center-wrapper" style="margin-top: 80px;"><div id="shop" class="section-title gold-text">Organic Henna Shop</div></div>
+    <p class="section-desc">Order professional grade natural henna cones and aftercare balm directly.</p>
+    <div class="shop-grid">
+        <div class="shop-card">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300" alt="Cone">
+            <h4>Organic Henna Cones (Pack of 5)</h4>
+            <p>100% natural, deep stain guaranteed.</p>
+            <span class="price-tag" style="display:block; margin-bottom:12px;">₹350</span>
+            <button class="btn-shop" onclick="addToCart('Organic Henna Cones', 350)">Add to Inquiry</button>
+        </div>
+        <div class="shop-card">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300" alt="Balm">
+            <h4>Henna Aftercare Balm</h4>
+            <p>Essential herbal oil blend for deep dark stain.</p>
+            <span class="price-tag" style="display:block; margin-bottom:12px;">₹250</span>
+            <button class="btn-shop" onclick="addToCart('Henna Aftercare Balm', 250)">Add to Inquiry</button>
+        </div>
+    </div>
+
+    <!-- BEFORE & AFTER SLIDER SECTION -->
+    <div class="center-wrapper" style="margin-top: 80px;"><div id="transform" class="section-title gold-text">Transformation Magic</div></div>
+    <p class="section-desc">Drag the slider to experience the dramatic difference of our professional bridal makeovers.</p>
+    
+    <div class="ba-container">
+        <div class="ba-image-container">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=700" alt="After Makeup">
+            <span class="ba-label after">AFTER</span>
+        </div>
+        <div class="ba-after" id="baAfterLayer">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=700" alt="Before Makeup">
+            <span class="ba-label before">BEFORE</span>
+        </div>
+        <input type="range" min="0" max="100" value="50" class="ba-slider" id="baRange" oninput="slideCompare(this)">
+    </div>
+
+    <!-- GALLERY SECTION -->
+    <div class="center-wrapper" style="margin-top: 80px;"><div id="gallery" class="section-title gold-text">Portfolio Gallery</div></div>
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">All Works</button>
+        <button class="filter-btn" onclick="filterGallery('makeup', this)">Makeup</button>
+        <button class="filter-btn" onclick="filterGallery('hair', this)">Hair & Draping</button>
+        <button class="filter-btn" onclick="filterGallery('mehendi', this)">Mehendi</button>
+        <button class="filter-btn" onclick="filterGallery('nails', this)">Nails</button>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="gallery-item makeup">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400" alt="Gallery">
+            <div class="gallery-overlay">
+                <h5>HD Bridal Makeup</h5>
+                <a href="#book" class="btn-card-book" style="color:#fff; border-color:#fff;">Book This Style</a>
+            </div>
+        </div>
+        <div class="gallery-item mehendi">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400" alt="Gallery">
+            <div class="gallery-overlay">
+                <h5>Bridal Mehendi Art</h5>
+                <a href="#book" class="btn-card-book" style="color:#fff; border-color:#fff;">Book This Style</a>
+            </div>
+        </div>
+        <div class="gallery-item hair">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400" alt="Gallery">
+            <div class="gallery-overlay">
+                <h5>Saree Pre-Pleating & Draping</h5>
+                <a href="#book" class="btn-card-book" style="color:#fff; border-color:#fff;">Book This Style</a>
+            </div>
+        </div>
+        <div class="gallery-item nails">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400" alt="Gallery">
+            <div class="gallery-overlay">
+                <h5>Gel Nail Extensions</h5>
+                <a href="#book" class="btn-card-book" style="color:#fff; border-color:#fff;">Book This Style</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLIENT REVIEWS -->
+    <div class="center-wrapper" style="margin-top: 80px;"><div id="reviews" class="section-title gold-text">Client Testimonials</div></div>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <strong>★ ★ ★ ★ ★ — Priya R. (Bride)</strong>
+            <p>"Gayathri made me look like an absolute dream on my wedding day. The makeup lasted all day without a single smudge!"</p>
+        </div>
+        <div class="review-card">
+            <strong>★ ★ ★ ★ ★ — Sneha M.</strong>
+            <p>"The mehendi stain was remarkably dark, and her draping work was exceptionally neat and professional."</p>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="center-wrapper" style="margin-top: 80px;"><div id="faq" class="section-title gold-text">Frequently Asked Questions</div></div>
+    <div class="faq-container">
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">Do you travel outside Nagercoil for bridal bookings? <span>+</span></div>
+            <div class="faq-answer">Yes, we are completely open to travel across Tamil Nadu and neighboring locations for destination weddings and large bridal parties.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">How do I secure my event date? <span>+</span></div>
+            <div class="faq-answer">An advance booking amount via online transfer or UPI secures your calendar date. You can finalize details directly through our WhatsApp checkout system.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">Are the henna cones completely organic? <span>+</span></div>
+            <div class="faq-answer">Yes! 100% natural Nilgiri and essential oils are used with zero chemical dyes, making it completely safe for brides and children.</div>
+        </div>
+    </div>
+
+    <!-- ADVANCED MULTI-SELECT BOOKING FORM -->
+    <div class="center-wrapper" style="margin-top: 80px;"><div id="book" class="section-title gold-text">Reserve Your Date & Services</div></div>
+    <form onsubmit="event.preventDefault(); sendAdvancedBooking();">
+        <label>Full Name</label>
+        <input type="text" id="bName" required placeholder="Enter your name">
+
+        <label>WhatsApp Contact Number</label>
+        <input type="tel" id="bPhone" required placeholder="Enter active mobile number">
+
+        <label>Select Required Services (Multiple Selection)</label>
+        <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Bridal Makeup"> Bridal Makeup</label>
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Party/Guest Makeup"> Party Makeup</label>
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Bridal Hairstyling"> Hairstyling</label>
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Saree Draping"> Saree Draping</label>
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Bridal Mehendi"> Bridal Mehendi</label>
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Nail Extensions"> Nail Extensions</label>
+            <label class="checkbox-item"><input type="checkbox" name="service" value="Henna Shop Items"> Henna Shop Items</label>
+        </div>
+
+        <label>Event Date</label>
+        <input type="date" id="bDate" required>
+
+        <label>Venue Location & Special Notes</label>
+        <textarea id="bNotes" rows="3" placeholder="Mention venue location or specific styling instructions"></textarea>
+
+        <button type="submit" class="btn-submit">Confirm Booking via WhatsApp 📲</button>
+    </form>
+
+</div>
+
+<!-- Mobile Bottom Fixed Bar -->
+<div class="mobile-bottom-bar">
+    <a href="tel:916383819028" class="m-call">📞 Call</a>
+    <a href="https://api.whatsapp.com/send?phone=916383819028" class="m-wa" target="_blank">💬 WhatsApp</a>
+    <a href="#book" class="m-book">📅 Book Now</a>
+</div>
+
+<footer>
+    © 2026 Magical Touch by Gayathri. All Rights Reserved. Designed for Elite Artistry.
+</footer>
+
+<script>
+// Theme Switcher
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+}
+
+// Before & After Slider Logic
+function slideCompare(slider) {
+    let afterLayer = document.getElementById('baAfterLayer');
+    afterLayer.style.width = slider.value + '%';
+}
+
+// Gallery Filtering
+function filterGallery(category, btn) {
+    let items = document.querySelectorAll('.gallery-item');
+    let buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.classList.remove('hide');
+        } else {
+            item.classList.add('hide');
+        }
+    });
+}
+
+// FAQ Accordion
+function toggleFaq(item) {
+    item.classList.toggle('active');
+    let span = item.querySelector('.faq-question span');
+    span.textContent = item.classList.contains('active') ? '-' : '+';
+}
+
+// Mini Shop Add to Cart Helper
+let cartItems = [];
+function addToCart(productName, price) {
+    cartItems.push(`${productName} (₹${price})`);
+    alert(`Added "${productName}" to your inquiry list! Complete your booking below.`);
+    document.getElementById('book').scrollIntoView();
+    // Auto-check shop items checkbox if available
+    let checkboxes = document.querySelectorAll('input[name="service"]');
+    checkboxes.forEach(cb => {
+        if(cb.value === 'Henna Shop Items') cb.checked = true;
+    });
+}
+
+// Multi-Service Advanced Booking WhatsApp Generator
+function sendAdvancedBooking() {
+    let name = document.getElementById('bName').value;
+    let phone = document.getElementById('bPhone').value;
+    let date = document.getElementById('bDate').value;
+    let notes = document.getElementById('bNotes').value;
+
+    let selectedServices = [];
+    document.querySelectorAll('input[name="service"]:checked').forEach(cb => {
+        selectedServices.push(cb.value);
+    });
+    if(cartItems.length > 0) {
+        selectedServices.push('Shop Items: ' + cartItems.join(', '));
+    }
+
+    if(selectedServices.length === 0) {
+        alert('Please select at least one service!');
+        return;
+    }
+
+    let myWhatsAppNumber = "916383819028";
+    let message = `Hello Gayathri! New Multi-Service Booking Request:%0A%0A` +
+                  `*Name:* ${encodeURIComponent(name)}%0A` +
+                  `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                  `*Services:* ${encodeURIComponent(selectedServices.join(', '))}%0A` +
+                  `*Event Date:* ${encodeURIComponent(date)}%0A` +
+                  `*Notes:* ${encodeURIComponent(notes || 'None')}`;
+
+    let whatsappURL = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${message}`;
+    window.location.href = whatsappURL;
+}
+</script>
+
+</body>
+</html>
