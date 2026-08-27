@@ -17,7 +17,6 @@
             --border-color: #2a2a2a;
         }
 
-        /* Light Mode Variables */
         body.light-mode {
             --bg-color: #faf6f0;
             --card-bg: #ffffff;
@@ -102,6 +101,15 @@
         .gallery-item:hover img { transform: scale(1.05); }
         .gallery-caption { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: #f1b814; font-size: 11px; padding: 6px; text-align: center; letter-spacing: 1px; }
 
+        /* --- Instagram Feed Section --- */
+        .insta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
+        .insta-post { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1; border: 1px solid var(--border-color); }
+        .insta-post img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .insta-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; color: #f1b814; font-weight: bold; font-size: 13px; text-decoration: none; }
+        .insta-post:hover .insta-overlay { opacity: 1; }
+        .insta-post:hover img { transform: scale(1.08); }
+        .insta-follow-btn { display: inline-block; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: #fff; padding: 10px 25px; border-radius: 30px; text-decoration: none; font-size: 13px; font-weight: bold; margin-top: 20px; letter-spacing: 1px; }
+
         /* Reviews */
         .review-card { background: var(--card-bg); padding: 25px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--accent-yellow); box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
         .review-card strong { color: var(--gold-color); font-size: 15px; }
@@ -138,6 +146,7 @@
     <a href="#pricing">Packages</a>
     <a href="#store">Henna Store</a>
     <a href="#gallery">Gallery</a>
+    <a href="#instagram">Instagram</a>
     <a href="#book">Book Now</a>
 </nav>
 
@@ -232,6 +241,30 @@
         </div>
     </div>
 
+    <!-- Instagram Feed Grid -->
+    <div class="center-wrapper"><div id="instagram" class="section-title gold-text">Follow On Instagram</div></div>
+    <div class="insta-grid">
+        <div class="insta-post">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300" alt="IG Post 1">
+            <a href="https://instagram.com" target="_blank" class="insta-overlay">View Reel 📸</a>
+        </div>
+        <div class="insta-post">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300" alt="IG Post 2">
+            <a href="https://instagram.com" target="_blank" class="insta-overlay">View Post 📸</a>
+        </div>
+        <div class="insta-post">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300" alt="IG Post 3">
+            <a href="https://instagram.com" target="_blank" class="insta-overlay">View Reel 📸</a>
+        </div>
+        <div class="insta-post">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=300" alt="IG Post 4">
+            <a href="https://instagram.com" target="_blank" class="insta-overlay">View Post 📸</a>
+        </div>
+    </div>
+    <div class="center-wrapper">
+        <a href="https://instagram.com" target="_blank" class="insta-follow-btn">📸 Follow @MagicalTouch_Gayathri</a>
+    </div>
+
     <!-- Reviews -->
     <div class="center-wrapper"><div class="section-title gold-text">Client Reviews</div></div>
     <div class="review-card">
@@ -279,12 +312,10 @@
 </footer>
 
 <script>
-// Toggle Light/Dark Mode
 function toggleTheme() {
     document.body.classList.toggle('light-mode');
 }
 
-// Filter Portfolio
 function filterGallery(category, btn) {
     let items = document.querySelectorAll('.gallery-item');
     let buttons = document.querySelectorAll('.filter-btn');
@@ -301,7 +332,6 @@ function filterGallery(category, btn) {
     });
 }
 
-// WhatsApp Booking
 function sendBooking() {
     let name = document.getElementById('name').value;
     let phone = document.getElementById('phone').value;
