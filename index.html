@@ -50,8 +50,8 @@
         .nav-links a { color: var(--text-color); text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
         .nav-links a:hover { color: var(--accent-yellow); }
 
-        /* Hero Section */
-        header { min-height: 95vh; background: linear-gradient(rgba(11,11,11,0.65), rgba(11,11,11,0.9)), url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--gold-color); }
+        /* Hero Section with Natural Indian Bride Background */
+        header { min-height: 95vh; background: linear-gradient(rgba(11,11,11,0.65), rgba(11,11,11,0.85)), url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--gold-color); }
         header h1 { font-size: clamp(32px, 5vw, 60px); margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         header p.subtitle { font-size: clamp(14px, 2vw, 18px); color: var(--accent-yellow); letter-spacing: 3px; margin-bottom: 25px; font-weight: 500; }
         .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 35px; }
@@ -66,29 +66,11 @@
         .section-desc { text-align: center; color: var(--subtext-color); font-size: 14px; max-width: 600px; margin: 0 auto 50px auto; }
         .center-wrapper { text-align: center; }
 
-        /* Trust Grid */
-        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        .trust-box { background: var(--card-bg); padding: 35px 30px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
-        .trust-box:hover { border-color: var(--gold-color); transform: translateY(-5px); }
-        .trust-box h4 { color: var(--accent-yellow); margin-bottom: 12px; font-size: 16px; }
-        .trust-box p { font-size: 13px; color: var(--subtext-color); }
-
-        /* Package Cards */
-        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 80px; }
-        .package-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 40px 30px; text-align: center; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
-        .package-card:hover { border-color: var(--gold-color); transform: translateY(-8px); }
-        .package-card.featured { border-color: var(--gold-color); background: linear-gradient(180deg, rgba(212,175,55,0.08) 0%, var(--card-bg) 100%); }
-        .package-card h3 { font-size: 22px; margin-bottom: 10px; color: var(--accent-yellow); }
-        .package-price { font-size: 24px; font-weight: bold; color: var(--gold-color); margin: 15px 0 25px 0; font-family: 'Cinzel', serif; }
-        .package-features { list-style: none; margin-bottom: 30px; text-align: left; font-size: 13px; color: var(--subtext-color); }
-        .package-features li { padding: 8px 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px; }
-        .package-features li::before { content: "✨"; font-size: 11px; }
-
         /* Services Grid */
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .service-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); transition: var(--transition); display: flex; flex-direction: column; }
         .service-card:hover { border-color: var(--gold-color); transform: translateY(-8px); }
-        .service-img-wrap { overflow: hidden; height: 220px; }
+        .service-img-wrap { overflow: hidden; height: 260px; }
         .service-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
         .service-card:hover .service-img { transform: scale(1.1); }
         .service-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
@@ -107,19 +89,6 @@
         .gallery-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.65); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: var(--transition); color: #fff; padding: 20px; text-align: center; }
         .gallery-item:hover .gallery-overlay { opacity: 1; }
 
-        /* Instagram Banner */
-        .insta-banner { background: var(--card-bg); border: 1px solid var(--gold-color); padding: 30px; border-radius: 8px; text-align: center; margin: 40px 0; }
-
-        /* Reviews & FAQ */
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .review-card { background: var(--card-bg); padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold-color); border: 1px solid var(--border-color); }
-        
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); margin-bottom: 12px; border-radius: 6px; overflow: hidden; }
-        .faq-question { padding: 18px 22px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-answer { padding: 0 22px 18px 22px; font-size: 13px; color: var(--subtext-color); display: none; line-height: 1.7; }
-        .faq-item.active .faq-answer { display: block; }
-
         /* Booking Form */
         form { background: var(--card-bg); padding: 45px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 750px; margin: 0 auto; }
         label { font-weight: 600; font-size: 11px; display: block; margin-top: 20px; color: var(--accent-yellow); text-transform: uppercase; }
@@ -129,7 +98,7 @@
         .btn-submit { background: linear-gradient(135deg, var(--accent-yellow), var(--gold-color)); color: #000; border: none; padding: 16px; font-size: 13px; font-weight: bold; width: 100%; border-radius: 4px; margin-top: 35px; cursor: pointer; text-transform: uppercase; transition: var(--transition); }
 
         /* Mobile Bottom Bar */
-        .mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--card-bg); border-top: 1px solid var(--border-color); z-index: 1000; padding: 10px; justify-content: space-around; }
+        .mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--card-bg); border-top: 1px solid var(--border-color); z-index: 1000; padding: 10px; justify-space: around; }
         .mobile-bottom-bar a { text-decoration: none; font-size: 12px; font-weight: bold; padding: 8px 16px; border-radius: 20px; }
         .m-wa { background: #25D366; color: #fff; }
         .m-book { background: var(--gold-color); color: #000; }
@@ -155,12 +124,8 @@
 <nav>
     <a href="#" class="nav-logo">Magical Touch</a>
     <ul class="nav-links">
-        <li><a href="#about">Why Us</a></li>
-        <li><a href="#packages">Packages</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#faq">FAQ</a></li>
         <li><a href="#book" class="btn-primary" style="padding: 6px 15px; font-size: 10px;">Book Now</a></li>
     </ul>
 </nav>
@@ -183,85 +148,20 @@
 
 <div class="container">
 
-    <!-- WHY CHOOSE US -->
-    <div class="center-wrapper"><div id="about" class="section-title gold-text" data-aos="fade-up">Why Magical Touch?</div></div>
-    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Delivering unmatched bridal elegance and professional artistry right to your venue.</p>
-    
-    <div class="trust-grid">
-        <div class="trust-box" data-aos="fade-up" data-aos-delay="100">
-            <h4>✨ Professional Artist</h4>
-            <p>Dedicated expertise focused on highlighting your natural beauty with fine technical skills.</p>
-        </div>
-        <div class="trust-box" data-aos="fade-up" data-aos-delay="200">
-            <h4>💎 Premium Products</h4>
-            <p>Using proven, high-grade skin and makeup products for long-lasting performance.</p>
-        </div>
-        <div class="trust-box" data-aos="fade-up" data-aos-delay="300">
-            <h4>🌿 Quality Henna</h4>
-            <p>Freshly prepared organic mehendi paste ensuring rich color and safety.</p>
-        </div>
-    </div>
-
-    <!-- PACKAGES -->
-    <div class="center-wrapper"><div id="packages" class="section-title gold-text" data-aos="fade-up">Signature Bridal Packages</div></div>
-    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Transparent pricing guidelines built for maximum clarity.</p>
-
-    <div class="package-grid">
-        <div class="package-card" data-aos="flip-left" data-aos-delay="100">
-            <div>
-                <h3>🥉 Classic Bride</h3>
-                <div class="package-price">Starting from ₹6,000</div>
-                <ul class="package-features">
-                    <li>Bridal Makeup (HD Finish)</li>
-                    <li>Traditional / Modern Hairstyling</li>
-                    <li>Saree Draping & Pinning</li>
-                    <li>False Eyelashes Included</li>
-                </ul>
-            </div>
-            <a href="#book" class="btn-primary" style="padding: 10px; font-size: 11px;">Select Package</a>
-        </div>
-
-        <div class="package-card featured" data-aos="flip-left" data-aos-delay="300">
-            <div>
-                <span class="badge" style="margin-bottom:15px; display:inline-block;">Popular Choice</span>
-                <h3>👑 Royal Bride</h3>
-                <div class="package-price">Starting from ₹10,000</div>
-                <ul class="package-features">
-                    <li>High-Definition Special Look</li>
-                    <li>Designer Hairstyling & Accessories</li>
-                    <li>Precision Saree Draping</li>
-                    <li>Jewelry & Accessories Setting</li>
-                </ul>
-            </div>
-            <a href="#book" class="btn-primary" style="padding: 10px; font-size: 11px;">Select Package</a>
-        </div>
-
-        <div class="package-card" data-aos="flip-left" data-aos-delay="500">
-            <div>
-                <h3>💎 Luxury Bride</h3>
-                <div class="package-price">Custom Pricing</div>
-                <ul class="package-features">
-                    <li>Multiple Event Looks</li>
-                    <li>Intricate Bridal Mehendi Included</li>
-                    <li>Saree Pre-pleating & Advanced Draping</li>
-                    <li>Nail Extensions & Art Included</li>
-                </ul>
-            </div>
-            <a href="#book" class="btn-primary" style="padding: 10px; font-size: 11px;">Select Package</a>
-        </div>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="center-wrapper"><div id="services" class="section-title gold-text" data-aos="fade-up">Our Services</div></div>
-    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Comprehensive beauty and styling services tailored for your special functions.</p>
+    <!-- SERVICES WITH NATURAL MATCHING IMAGES -->
+    <div class="center-wrapper"><div id="services" class="section-title gold-text" data-aos="fade-up">Our Special Services</div></div>
+    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Tailored bridal services designed for elegant looks on your special day.</p>
 
     <div class="service-grid">
+        <!-- 1. Bridal Makeup -->
         <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-img-wrap"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500" alt="Bridal Makeup" class="service-img"></div>
+            <div class="service-img-wrap">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80" alt="Bridal Makeup" class="service-img">
+            </div>
             <div class="service-content">
                 <div>
-                    <h4>Bridal Makeup</h4>
-                    <p>Camera-ready HD bridal makeup designed to look graceful in person and photos.</p>
+                    <h4>Bridal Makeup (HD & Airbrush)</h4>
+                    <p>Flawless, camera-ready Indian bridal makeup customized to highlight your natural features.</p>
                 </div>
                 <div class="service-footer">
                     <span class="price-tag">From ₹6,000</span>
@@ -270,12 +170,15 @@
             </div>
         </div>
 
+        <!-- 2. Mehendi Art -->
         <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-img-wrap"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500" alt="Bridal Mehendi" class="service-img"></div>
+            <div class="service-img-wrap">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80" alt="Bridal Mehendi" class="service-img">
+            </div>
             <div class="service-content">
                 <div>
                     <h4>Bridal Mehendi Art</h4>
-                    <p>Detailed traditional patterns, figures, and modern henna designs.</p>
+                    <p>Intricate bridal, Arabic, and traditional henna patterns with deep natural stain.</p>
                 </div>
                 <div class="service-footer">
                     <span class="price-tag">From ₹2,500</span>
@@ -284,12 +187,15 @@
             </div>
         </div>
 
+        <!-- 3. Nail Art & Extensions -->
         <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-img-wrap"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500" alt="Nail Art" class="service-img"></div>
+            <div class="service-img-wrap">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Nail Art" class="service-img">
+            </div>
             <div class="service-content">
                 <div>
                     <h4>Nail Extensions & Art</h4>
-                    <p>Custom gel extensions, acrylics, press-ons, and elegant bridal nail art.</p>
+                    <p>Luxury gel extensions, acrylics, press-on nails, and custom bridal nail art styles.</p>
                 </div>
                 <div class="service-footer">
                     <span class="price-tag">From ₹1,200</span>
@@ -298,12 +204,15 @@
             </div>
         </div>
 
+        <!-- 4. Saree Draping & Styling -->
         <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-img-wrap"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500" alt="Saree Draping" class="service-img"></div>
+            <div class="service-img-wrap">
+                <img src="https://images.unsplash.com/photo-1610030469668-98e550d6193c?w=800&q=80" alt="Saree Draping" class="service-img">
+            </div>
             <div class="service-content">
                 <div>
                     <h4>Saree Draping & Pre-Pleating</h4>
-                    <p>Neat box pleats, crisp folds, and durable pinning for silk and luxury sarees.</p>
+                    <p>South Indian traditional silk saree draping, pre-pleating, and saree model styling.</p>
                 </div>
                 <div class="service-footer">
                     <span class="price-tag">From ₹500</span>
@@ -313,44 +222,37 @@
         </div>
     </div>
 
-    <!-- PORTFOLIO GALLERY -->
+    <!-- PORTFOLIO SHOWCASE -->
     <div class="center-wrapper" style="margin-top: 80px;"><div id="portfolio" class="section-title gold-text" data-aos="fade-up">Portfolio Showcase</div></div>
-    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">A look at recent bridal looks, henna designs, nail extension transformations, and saree modeling.</p>
+    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Real bridal transformations, detailed henna, nail extensions, and saree draping styles.</p>
 
     <div class="gallery-grid">
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600" alt="Bridal Look">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Bridal Look">
             <div class="gallery-overlay">
-                <h5>HD Bridal Glam Look</h5>
+                <h5>South Indian Bridal Glam</h5>
                 <a href="#book" class="btn-primary" style="padding: 6px 14px; font-size: 10px; margin-top: 10px;">Inquire Look</a>
             </div>
         </div>
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600" alt="Mehendi Art">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80" alt="Mehendi Work">
             <div class="gallery-overlay">
-                <h5>Bridal Mehendi Art</h5>
+                <h5>Detailed Bridal Henna</h5>
                 <a href="#book" class="btn-primary" style="padding: 6px 14px; font-size: 10px; margin-top: 10px;">Inquire Look</a>
             </div>
         </div>
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600" alt="Nail Extension">
+            <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&q=80" alt="Nail Extension">
             <div class="gallery-overlay">
-                <h5>Bridal Gel Nail Art</h5>
+                <h5>Custom Gel Extensions</h5>
                 <a href="#book" class="btn-primary" style="padding: 6px 14px; font-size: 10px; margin-top: 10px;">Inquire Look</a>
             </div>
         </div>
     </div>
 
-    <!-- INSTAGRAM BANNER -->
-    <div class="insta-banner" data-aos="fade-up">
-        <h4 class="gold-text">Want to see our latest transformations?</h4>
-        <p style="margin: 10px 0 20px 0; color: var(--subtext-color); font-size: 13px;">Follow our daily client reels, transformations, and saree draping videos on Instagram.</p>
-        <a href="https://instagram.com" target="_blank" class="btn-outline" style="font-size: 11px;">Follow On Instagram →</a>
-    </div>
-
     <!-- BOOKING FORM -->
     <div class="center-wrapper" style="margin-top: 80px;"><div id="book" class="section-title gold-text" data-aos="fade-up">Book Your Date</div></div>
-    <p class="section-desc" data-aos="fade-up">Submit your requirements below to trigger a direct formatted WhatsApp booking request.</p>
+    <p class="section-desc" data-aos="fade-up">Select services and send booking request via WhatsApp instantly.</p>
 
     <form onsubmit="event.preventDefault(); sendBooking();" data-aos="fade-up" data-aos-delay="200">
         <div class="form-grid">
@@ -418,18 +320,12 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-    // Initialize Scroll Animation
-    AOS.init({
-        duration: 1000,
-        once: true
-    });
+    AOS.init({ duration: 1000, once: true });
 
-    // Theme Switcher
     function toggleTheme() {
         document.body.classList.toggle('light-mode');
     }
 
-    // WhatsApp Booking Function
     function sendBooking() {
         let name = document.getElementById('fName').value;
         let phone = document.getElementById('fPhone').value;
@@ -455,4 +351,4 @@
 </script>
 
 </body>
-</html>    
+</html>
