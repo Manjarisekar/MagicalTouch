@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magical Touch by Gayathri | Luxury Bridal Artistry</title>
+    <title>Magical Touch by Gayathri | Premium Studio</title>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- AOS Scroll Animation CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <style>
@@ -20,7 +18,7 @@
             --gold-color: #d4af37;
             --accent-yellow: #f1b814;
             --border-color: #262626;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         body.light-mode {
@@ -38,7 +36,7 @@
 
         h1, h2, h3, h4, .gold-text { font-family: 'Cinzel', serif; color: var(--gold-color); letter-spacing: 2px; }
 
-        /* Top Utilities */
+        /* Top Bar & Theme Toggle */
         .top-utilities { position: fixed; top: 15px; right: 20px; z-index: 1001; display: flex; gap: 10px; }
         .util-btn { background: var(--card-bg); color: var(--gold-color); border: 1px solid var(--gold-color); padding: 8px 14px; border-radius: 20px; font-size: 11px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: var(--transition); }
         .util-btn:hover { background: var(--gold-color); color: #000; }
@@ -46,309 +44,462 @@
         /* Navigation */
         nav { background-color: var(--card-bg); padding: 15px 40px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
         .nav-logo { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold-color); font-weight: 700; text-decoration: none; letter-spacing: 2px; }
-        .nav-links { display: flex; gap: 18px; align-items: center; list-style: none; flex-wrap: wrap; }
-        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
-        .nav-links a:hover { color: var(--accent-yellow); }
+        .nav-links { display: flex; gap: 18px; align-items: center; list-style: none; }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .cart-trigger { position: relative; cursor: pointer; color: var(--gold-color); font-weight: bold; font-size: 13px; }
+        .cart-count { background: var(--accent-yellow); color: #000; border-radius: 50%; padding: 2px 7px; font-size: 10px; font-weight: bold; margin-left: 4px; }
 
-        /* Hero Section with Natural Indian Bride Background */
-        header { min-height: 95vh; background: linear-gradient(rgba(11,11,11,0.65), rgba(11,11,11,0.85)), url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--gold-color); }
-        header h1 { font-size: clamp(32px, 5vw, 60px); margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
-        header p.subtitle { font-size: clamp(14px, 2vw, 18px); color: var(--accent-yellow); letter-spacing: 3px; margin-bottom: 25px; font-weight: 500; }
-        .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 35px; }
-        .badge { background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold-color); color: var(--text-color); padding: 6px 16px; border-radius: 30px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
-        .hero-cta { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn-primary { background: linear-gradient(135deg, var(--accent-yellow), var(--gold-color)); color: #000; padding: 14px 30px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 5px 20px rgba(212,175,55,0.3); transition: var(--transition); }
-        .btn-outline { background: transparent; border: 1px solid var(--gold-color); color: var(--text-color); padding: 14px 30px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); }
-        .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); }
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { font-size: 32px; text-align: center; margin-bottom: 10px; }
+        .section-desc { text-align: center; color: var(--subtext-color); font-size: 13px; max-width: 600px; margin: 0 auto 40px auto; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-        .section-title { font-size: 32px; text-align: center; margin-bottom: 15px; }
-        .section-desc { text-align: center; color: var(--subtext-color); font-size: 14px; max-width: 600px; margin: 0 auto 50px auto; }
-        .center-wrapper { text-align: center; }
+        /* Grid Layout */
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .card-item { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); transition: var(--transition); display: flex; flex-direction: column; }
+        .card-item:hover { border-color: var(--gold-color); transform: translateY(-5px); }
+        .card-img { width: 100%; height: 220px; object-fit: cover; }
+        .card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+        .price-tag { font-size: 16px; font-weight: bold; color: var(--gold-color); font-family: 'Cinzel', serif; }
+        
+        /* Buttons */
+        .btn-primary { background: linear-gradient(135deg, var(--accent-yellow), var(--gold-color)); color: #000; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; border: none; cursor: pointer; transition: var(--transition); }
+        .btn-primary:hover { transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-color); color: var(--gold-color); padding: 8px 14px; border-radius: 4px; font-size: 10px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
 
-        /* Services Grid */
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .service-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); transition: var(--transition); display: flex; flex-direction: column; }
-        .service-card:hover { border-color: var(--gold-color); transform: translateY(-8px); }
-        .service-img-wrap { overflow: hidden; height: 260px; }
-        .service-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-        .service-card:hover .service-img { transform: scale(1.1); }
-        .service-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
-        .service-content h4 { font-size: 18px; margin-bottom: 10px; color: var(--text-color); }
-        .service-content p { font-size: 13px; color: var(--subtext-color); margin-bottom: 20px; }
-        .service-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 15px; }
-        .price-tag { font-size: 15px; font-weight: bold; color: var(--gold-color); font-family: 'Cinzel', serif; }
-        .btn-card-book { color: var(--gold-color); font-size: 12px; font-weight: bold; text-decoration: none; transition: var(--transition); }
-        .btn-card-book:hover { color: var(--accent-yellow); }
+        /* Calendar Legend Box */
+        .calendar-status-box { background: var(--card-bg); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-around; font-size: 12px; }
+        .dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+        .dot-green { background-color: #25D366; }
+        .dot-yellow { background-color: #f1b814; }
+        .dot-red { background-color: #ff4d4d; }
 
-        /* Gallery Grid */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .gallery-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); height: 320px; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-        .gallery-item:hover img { transform: scale(1.08); }
-        .gallery-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.65); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: var(--transition); color: #fff; padding: 20px; text-align: center; }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-        /* Booking Form */
-        form { background: var(--card-bg); padding: 45px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 750px; margin: 0 auto; }
-        label { font-weight: 600; font-size: 11px; display: block; margin-top: 20px; color: var(--accent-yellow); text-transform: uppercase; }
-        input[type="text"], input[type="tel"], input[type="date"], textarea, select { width: 100%; padding: 14px; margin-top: 6px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 4px; font-size: 14px; color: var(--text-color); }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        /* Booking Form & Payment Breakdown */
+        .booking-form { background: var(--card-bg); padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 800px; margin: 0 auto; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         @media(max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
-        .btn-submit { background: linear-gradient(135deg, var(--accent-yellow), var(--gold-color)); color: #000; border: none; padding: 16px; font-size: 13px; font-weight: bold; width: 100%; border-radius: 4px; margin-top: 35px; cursor: pointer; text-transform: uppercase; transition: var(--transition); }
+        label { font-weight: 600; font-size: 11px; display: block; margin-top: 15px; color: var(--accent-yellow); text-transform: uppercase; }
+        input, select, textarea { width: 100%; padding: 12px; margin-top: 5px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 4px; font-size: 13px; color: var(--text-color); }
+        
+        .payment-summary { background: rgba(212, 175, 55, 0.08); border: 1px dashed var(--gold-color); padding: 15px; border-radius: 6px; margin-top: 20px; }
+        .payment-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+        
+        /* Drawer Overlay (Cart & Details) */
+        .drawer { position: fixed; top: 0; right: -420px; width: 400px; height: 100vh; background: var(--card-bg); border-left: 1px solid var(--border-color); z-index: 2000; padding: 30px; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+        .drawer.active { right: 0; }
+        @media(max-width: 480px) { .drawer { width: 100%; right: -100%; } }
+        .drawer-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+        .drawer-body { flex-grow: 1; overflow-y: auto; margin: 20px 0; }
 
-        /* Mobile Bottom Bar */
-        .mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--card-bg); border-top: 1px solid var(--border-color); z-index: 1000; padding: 10px; justify-space: around; }
-        .mobile-bottom-bar a { text-decoration: none; font-size: 12px; font-weight: bold; padding: 8px 16px; border-radius: 20px; }
-        .m-wa { background: #25D366; color: #fff; }
-        .m-book { background: var(--gold-color); color: #000; }
-
-        @media (max-width: 768px) {
-            nav { padding: 12px 20px; }
-            .nav-links { display: none; }
-            .mobile-bottom-bar { display: flex; }
-            body { padding-bottom: 60px; }
-        }
-
-        footer { text-align: center; padding: 40px 20px; font-size: 12px; color: var(--subtext-color); background-color: #060606; border-top: 1px solid var(--border-color); margin-top: 60px; }
+        footer { text-align: center; padding: 30px; font-size: 11px; color: var(--subtext-color); background: #060606; border-top: 1px solid var(--border-color); margin-top: 50px; }
     </style>
 </head>
 <body>
 
-<!-- Top Utilities -->
 <div class="top-utilities">
-    <button class="util-btn" onclick="toggleTheme()">☀️ / 🌙 Theme</button>
+    <button class="util-btn" onclick="toggleTheme()">☀️ / 🌙 Mode</button>
 </div>
 
-<!-- Navigation -->
 <nav>
     <a href="#" class="nav-logo">Magical Touch</a>
     <ul class="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#book" class="btn-primary" style="padding: 6px 15px; font-size: 10px;">Book Now</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#booking">Book Appointment</a></li>
     </ul>
+    <div class="cart-trigger" onclick="toggleCartDrawer()">
+        <i class="fas fa-shopping-bag"></i> Cart <span class="cart-count" id="cartCount">0</span>
+    </div>
 </nav>
-
-<!-- Hero Section -->
-<header>
-    <h1 data-aos="fade-down" data-aos-duration="1200">Your Dream Look, Perfected.</h1>
-    <p class="subtitle" data-aos="fade-up" data-aos-delay="300">Bridal Makeup • Mehendi • Hair • Saree Draping • Nail Art</p>
-    <div class="hero-badges" data-aos="fade-up" data-aos-delay="500">
-        <span class="badge">✨ HD Bridal Glam</span>
-        <span class="badge">🌿 Henna Artistry</span>
-        <span class="badge">🥻 Saree Draping</span>
-        <span class="badge">💅 Nail Art & Extensions</span>
-    </div>
-    <div class="hero-cta" data-aos="zoom-in" data-aos-delay="700">
-        <a href="#book" class="btn-primary">Book Your Date</a>
-        <a href="#portfolio" class="btn-outline">View Portfolio</a>
-    </div>
-</header>
 
 <div class="container">
 
-    <!-- SERVICES WITH NATURAL MATCHING IMAGES -->
-    <div class="center-wrapper"><div id="services" class="section-title gold-text" data-aos="fade-up">Our Special Services</div></div>
-    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Tailored bridal services designed for elegant looks on your special day.</p>
+    <div id="services" class="section-title gold-text" data-aos="fade-up">Our Exclusive Services</div>
+    <p class="section-desc">Select any service to instantly schedule your appointment date.</p>
 
-    <div class="service-grid">
-        <!-- 1. Bridal Makeup -->
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-img-wrap">
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80" alt="Bridal Makeup" class="service-img">
+    <div class="grid-layout">
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Bridal Makeup</h4>
+                <p>HD / Airbrush bridal transformation.</p>
+                <div class="price-tag">₹8,000</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Bridal Makeup', 8000, 2000)">Book Slot</button>
             </div>
-            <div class="service-content">
-                <div>
-                    <h4>Bridal Makeup (HD & Airbrush)</h4>
-                    <p>Flawless, camera-ready Indian bridal makeup customized to highlight your natural features.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-tag">From ₹6,000</span>
-                    <a href="#book" class="btn-card-book">Book Now →</a>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Party Makeup</h4>
+                <p>Glamorous styling for special occasions.</p>
+                <div class="price-tag">₹2,500</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Party Makeup', 2500, 800)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Engagement Makeup</h4>
+                <p>Radiant look curated for ring ceremonies.</p>
+                <div class="price-tag">₹5,000</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Engagement Makeup', 5000, 1500)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Baby Shower Look</h4>
+                <p>Traditional and comfortable styling.</p>
+                <div class="price-tag">₹3,500</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Baby Shower Look', 3500, 1000)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Guest Look</h4>
+                <p>Elegant makeup touches for relatives.</p>
+                <div class="price-tag">₹1,500</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Guest Look', 1500, 500)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Hairstyling</h4>
+                <p>Traditional braids, floral buns & curls.</p>
+                <div class="price-tag">₹1,500</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Hairstyling', 1500, 500)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Saree Draping</h4>
+                <p>Box pleating and pin-up styling.</p>
+                <div class="price-tag">₹1,000</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Saree Draping', 1000, 300)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Bridal Mehendi</h4>
+                <p>Intricate bridal figure storytelling designs.</p>
+                <div class="price-tag">₹4,000</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Bridal Mehendi', 4000, 1000)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Non-Bridal Mehendi</h4>
+                <p>Arabic trails and mandala patterns.</p>
+                <div class="price-tag">₹800</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Non-Bridal Mehendi', 800, 300)">Book Slot</button>
+            </div>
+        </div>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Nail Services</h4>
+                <p>Acrylic/gel extensions & bridal nail art.</p>
+                <div class="price-tag">₹1,800</div>
+                <button class="btn-primary" style="margin-top:10px;" onclick="selectServiceForBooking('Nail Services', 1800, 500)">Book Slot</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="shop" class="section-title gold-text" style="margin-top:70px;">Organic Henna & Nail Shop</div>
+    <p class="section-desc">Add products to cart and checkout seamlessly.</p>
+
+    <div class="grid-layout">
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Organic Henna Cone</h4>
+                <p>Triple sifted Sojat henna cone (Single).</p>
+                <div class="price-tag">₹150</div>
+                <div style="display:flex; gap:5px; margin-top:10px;">
+                    <button class="btn-outline" onclick="openProductDetails('Organic Henna Cone', 150, 'Pure natural Sojat henna cone with essential oils for dark stain.')">View</button>
+                    <button class="btn-primary" onclick="addToCart('Organic Henna Cone', 150)">Add to Cart</button>
                 </div>
             </div>
         </div>
-
-        <!-- 2. Mehendi Art -->
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-img-wrap">
-                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80" alt="Bridal Mehendi" class="service-img">
-            </div>
-            <div class="service-content">
-                <div>
-                    <h4>Bridal Mehendi Art</h4>
-                    <p>Intricate bridal, Arabic, and traditional henna patterns with deep natural stain.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-tag">From ₹2,500</span>
-                    <a href="#book" class="btn-card-book">Book Now →</a>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1608248597263-000799965813?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Mehendi Aftercare Balm</h4>
+                <p>Seals stain depth and protects from water.</p>
+                <div class="price-tag">₹200</div>
+                <div style="display:flex; gap:5px; margin-top:10px;">
+                    <button class="btn-outline" onclick="openProductDetails('Mehendi Balm', 200, 'Handcrafted herbal balm for long-lasting dark mehendi stain.')">View</button>
+                    <button class="btn-primary" onclick="addToCart('Mehendi Balm', 200)">Add to Cart</button>
                 </div>
             </div>
         </div>
-
-        <!-- 3. Nail Art & Extensions -->
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-img-wrap">
-                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80" alt="Nail Art" class="service-img">
-            </div>
-            <div class="service-content">
-                <div>
-                    <h4>Nail Extensions & Art</h4>
-                    <p>Luxury gel extensions, acrylics, press-on nails, and custom bridal nail art styles.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-tag">From ₹1,200</span>
-                    <a href="#book" class="btn-card-book">Book Now →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. Saree Draping & Styling -->
-        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-img-wrap">
-                <img src="https://images.unsplash.com/photo-1610030469668-98e550d6193c?w=800&q=80" alt="Saree Draping" class="service-img">
-            </div>
-            <div class="service-content">
-                <div>
-                    <h4>Saree Draping & Pre-Pleating</h4>
-                    <p>South Indian traditional silk saree draping, pre-pleating, and saree model styling.</p>
-                </div>
-                <div class="service-footer">
-                    <span class="price-tag">From ₹500</span>
-                    <a href="#book" class="btn-card-book">Book Now →</a>
+        <div class="card-item">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500" class="card-img">
+            <div class="card-content">
+                <h4>Bridal Press-On Nails Kit</h4>
+                <p>Reusable custom luxury gel nails.</p>
+                <div class="price-tag">₹850</div>
+                <div style="display:flex; gap:5px; margin-top:10px;">
+                    <button class="btn-outline" onclick="openProductDetails('Press-On Nails', 850, 'Includes 10 custom gel nails, glue, buffer & prep pad.')">View</button>
+                    <button class="btn-primary" onclick="addToCart('Press-On Nails', 850)">Add to Cart</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PORTFOLIO SHOWCASE -->
-    <div class="center-wrapper" style="margin-top: 80px;"><div id="portfolio" class="section-title gold-text" data-aos="fade-up">Portfolio Showcase</div></div>
-    <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Real bridal transformations, detailed henna, nail extensions, and saree draping styles.</p>
+    <div id="booking" class="section-title gold-text" style="margin-top:70px;">Book Client Appointment</div>
+    <p class="section-desc">Check date status and confirm your slot with advance payment.</p>
 
-    <div class="gallery-grid">
-        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Bridal Look">
-            <div class="gallery-overlay">
-                <h5>South Indian Bridal Glam</h5>
-                <a href="#book" class="btn-primary" style="padding: 6px 14px; font-size: 10px; margin-top: 10px;">Inquire Look</a>
-            </div>
+    <div class="booking-form">
+        <div class="calendar-status-box">
+            <span><span class="dot dot-green"></span> 🟢 Available</span>
+            <span><span class="dot dot-yellow"></span> 🟡 Limited Slots</span>
+            <span><span class="dot dot-red"></span> 🔴 Fully Booked</span>
         </div>
-        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80" alt="Mehendi Work">
-            <div class="gallery-overlay">
-                <h5>Detailed Bridal Henna</h5>
-                <a href="#book" class="btn-primary" style="padding: 6px 14px; font-size: 10px; margin-top: 10px;">Inquire Look</a>
+
+        <form onsubmit="event.preventDefault(); processBooking();">
+            <div class="form-grid">
+                <div>
+                    <label>Select Service</label>
+                    <select id="bService" onchange="updatePaymentBreakdown()">
+                        <option value="Bridal Makeup" data-price="8000" data-adv="2000">Bridal Makeup (₹8,000)</option>
+                        <option value="Party Makeup" data-price="2500" data-adv="800">Party Makeup (₹2,500)</option>
+                        <option value="Engagement Makeup" data-price="5000" data-adv="1500">Engagement Makeup (₹5,000)</option>
+                        <option value="Baby Shower Look" data-price="3500" data-adv="1000">Baby Shower Look (₹3,500)</option>
+                        <option value="Guest Look" data-price="1500" data-adv="500">Guest Look (₹1,500)</option>
+                        <option value="Hairstyling" data-price="1500" data-adv="500">Hairstyling (₹1,500)</option>
+                        <option value="Saree Draping" data-price="1000" data-adv="300">Saree Draping (₹1,000)</option>
+                        <option value="Bridal Mehendi" data-price="4000" data-adv="1000">Bridal Mehendi (₹4,000)</option>
+                        <option value="Non-Bridal Mehendi" data-price="800" data-adv="300">Non-Bridal Mehendi (₹800)</option>
+                        <option value="Nail Services" data-price="1800" data-adv="500">Nail Services (₹1,800)</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Select Date</label>
+                    <input type="date" id="bDate" required onchange="checkCalendarStatus(this.value)">
+                </div>
             </div>
-        </div>
-        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-            <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&q=80" alt="Nail Extension">
-            <div class="gallery-overlay">
-                <h5>Custom Gel Extensions</h5>
-                <a href="#book" class="btn-primary" style="padding: 6px 14px; font-size: 10px; margin-top: 10px;">Inquire Look</a>
+
+            <div id="dateAvailabilityBadge" style="margin-top:8px; font-size:12px; font-weight:bold;"></div>
+
+            <div class="form-grid">
+                <div>
+                    <label>Select Preferred Time</label>
+                    <input type="time" id="bTime" required>
+                </div>
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" id="bName" placeholder="Your Name" required>
+                </div>
             </div>
-        </div>
+
+            <div class="form-grid">
+                <div>
+                    <label>Phone Number</label>
+                    <input type="tel" id="bPhone" placeholder="10-digit Mobile" required pattern="[0-9]{10}">
+                </div>
+                <div>
+                    <label>Event Venue Location</label>
+                    <input type="text" id="bLocation" placeholder="Address / Venue" required>
+                </div>
+            </div>
+
+            <div class="payment-summary">
+                <div class="payment-row">
+                    <span>Total Service Price:</span>
+                    <strong id="dispTotal">₹8,000</strong>
+                </div>
+                <div class="payment-row" style="color:var(--accent-yellow);">
+                    <span>Advance Payment Required Now:</span>
+                    <strong id="dispAdvance">₹2,000</strong>
+                </div>
+                <div class="payment-row" style="color:var(--subtext-color);">
+                    <span>Remaining Due on Event Date:</span>
+                    <span id="dispRemaining">₹6,000</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; margin-top:20px; padding:15px;">Confirm Booking & Pay Advance 💳</button>
+        </form>
     </div>
-
-    <!-- BOOKING FORM -->
-    <div class="center-wrapper" style="margin-top: 80px;"><div id="book" class="section-title gold-text" data-aos="fade-up">Book Your Date</div></div>
-    <p class="section-desc" data-aos="fade-up">Select services and send booking request via WhatsApp instantly.</p>
-
-    <form onsubmit="event.preventDefault(); sendBooking();" data-aos="fade-up" data-aos-delay="200">
-        <div class="form-grid">
-            <div>
-                <label>Your Name</label>
-                <input type="text" id="fName" required placeholder="Enter full name">
-            </div>
-            <div>
-                <label>Mobile / WhatsApp Number</label>
-                <input type="tel" id="fPhone" required placeholder="10-digit phone number">
-            </div>
-        </div>
-
-        <div class="form-grid">
-            <div>
-                <label>Event Type</label>
-                <select id="fEventType">
-                    <option value="Wedding / Reception">Wedding / Reception</option>
-                    <option value="Engagement">Engagement</option>
-                    <option value="Party / Guest Look">Party / Guest Look</option>
-                </select>
-            </div>
-            <div>
-                <label>Event Date</label>
-                <input type="date" id="fDate" required>
-            </div>
-        </div>
-
-        <div class="form-grid">
-            <div>
-                <label>Services Needed</label>
-                <select id="fService">
-                    <option value="Full Bridal Package (Makeup, Hair, Saree)">Full Bridal Package</option>
-                    <option value="Bridal Makeup Only">Bridal Makeup Only</option>
-                    <option value="Mehendi Art Only">Mehendi Art Only</option>
-                    <option value="Nail Art & Extensions">Nail Art & Extensions</option>
-                    <option value="Saree Draping Only">Saree Draping Only</option>
-                </select>
-            </div>
-            <div>
-                <label>Venue Location</label>
-                <input type="text" id="fVenue" required placeholder="City / Venue location">
-            </div>
-        </div>
-
-        <label>Additional Notes</label>
-        <textarea id="fNotes" rows="3" placeholder="Preferred timings or special requirements"></textarea>
-
-        <button type="submit" class="btn-submit">Send Booking Request via WhatsApp 📲</button>
-    </form>
 
 </div>
 
-<!-- Mobile Bottom Fixed Bar -->
-<div class="mobile-bottom-bar">
-    <a href="https://api.whatsapp.com/send?phone=916383819028" class="m-wa" target="_blank">💬 WhatsApp</a>
-    <a href="#book" class="m-book">📅 Book Now</a>
+<div class="drawer" id="cartDrawer">
+    <div class="drawer-header">
+        <h4 class="gold-text">Your Cart</h4>
+        <button onclick="toggleCartDrawer()" style="background:none; border:none; color:var(--gold-color); font-size:18px; cursor:pointer;">✕</button>
+    </div>
+    <div class="drawer-body" id="cartItemsList">
+        <p style="font-size:12px; color:var(--subtext-color);">Your cart is currently empty.</p>
+    </div>
+    <div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-weight:bold;">
+            <span>Subtotal:</span>
+            <span id="cartTotal" class="gold-text">₹0</span>
+        </div>
+        <button class="btn-primary" style="width:100%;" onclick="checkoutCart()">Proceed to Checkout 🛍️</button>
+    </div>
+</div>
+
+<div class="drawer" id="detailsDrawer">
+    <div class="drawer-header">
+        <h4 class="gold-text" id="dTitle">Product Details</h4>
+        <button onclick="toggleDetailsDrawer()" style="background:none; border:none; color:var(--gold-color); font-size:18px; cursor:pointer;">✕</button>
+    </div>
+    <div class="drawer-body">
+        <p id="dDesc" style="font-size:13px; margin-bottom:15px;"></p>
+        <div class="price-tag" id="dPrice" style="margin-bottom:20px;"></div>
+        <button class="btn-primary" style="width:100%;" id="dAddBtn">Add to Cart</button>
+    </div>
 </div>
 
 <footer>
-    © 2026 Magical Touch by Gayathri. All Rights Reserved. Luxury Bridal & Artistry Studio.
+    © 2026 Magical Touch by Gayathri. All Rights Reserved. E-Commerce & Luxury Studio System.
 </footer>
 
-<!-- AOS Animation JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init();
 
     function toggleTheme() {
         document.body.classList.toggle('light-mode');
     }
 
-    function sendBooking() {
-        let name = document.getElementById('fName').value;
-        let phone = document.getElementById('fPhone').value;
-        let eventType = document.getElementById('fEventType').value;
-        let date = document.getElementById('fDate').value;
-        let service = document.getElementById('fService').value;
-        let venue = document.getElementById('fVenue').value;
-        let notes = document.getElementById('fNotes').value;
+    /* --- CART LOGIC --- */
+    let cart = [];
+    function toggleCartDrawer() { document.getElementById('cartDrawer').classList.toggle('active'); }
+    function toggleDetailsDrawer() { document.getElementById('detailsDrawer').classList.toggle('active'); }
 
-        let myWhatsAppNumber = "916383819028";
-        let message = `Hello Gayathri! New Inquiry:%0A%0A` +
-                      `*Name:* ${encodeURIComponent(name)}%0A` +
-                      `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                      `*Event Type:* ${encodeURIComponent(eventType)}%0A` +
-                      `*Event Date:* ${encodeURIComponent(date)}%0A` +
-                      `*Service:* ${encodeURIComponent(service)}%0A` +
-                      `*Venue:* ${encodeURIComponent(venue)}%0A` +
-                      `*Notes:* ${encodeURIComponent(notes || 'None')}`;
-
-        let whatsappURL = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${message}`;
-        window.location.href = whatsappURL;
+    function addToCart(pName, pPrice) {
+        cart.push({ name: pName, price: pPrice });
+        updateCartUI();
+        toggleCartDrawer();
     }
-</script>
 
+    function updateCartUI() {
+        document.getElementById('cartCount').textContent = cart.length;
+        let list = document.getElementById('cartItemsList');
+        let total = 0;
+        if(cart.length === 0) {
+            list.innerHTML = `<p style="font-size:12px; color:var(--subtext-color);">Your cart is empty.</p>`;
+        } else {
+            list.innerHTML = '';
+            cart.forEach((item, index) => {
+                total += item.price;
+                list.innerHTML += `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid var(--border-color); padding-bottom:8px; font-size:12px;">
+                        <div><strong>${item.name}</strong><br><span style="color:var(--gold-color);">₹${item.price}</span></div>
+                        <button onclick="removeFromCart(${index})" style="background:none; border:none; color:red; cursor:pointer;">✕</button>
+                    </div>
+                `;
+            });
+        }
+        document.getElementById('cartTotal').textContent = `₹${total}`;
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+    }
+
+    function openProductDetails(name, price, desc) {
+        document.getElementById('dTitle').textContent = name;
+        document.getElementById('dPrice').textContent = `₹${price}`;
+        document.getElementById('dDesc').textContent = desc;
+        document.getElementById('dAddBtn').onclick = function() {
+            addToCart(name, price);
+            toggleDetailsDrawer();
+        };
+        toggleDetailsDrawer();
+    }
+
+    function checkoutCart() {
+        if(cart.length === 0) return alert("Your cart is empty!");
+        let itemsStr = cart.map(i => i.name).join(", ");
+        let total = cart.reduce((s, i) => s + i.price, 0);
+        let msg = `Hello Gayathri! I would like to place an order:%0A%0A*Items:* ${encodeURIComponent(itemsStr)}%0A*Total Price:* ₹${total}%0A%0APlease provide delivery payment details.`;
+        window.open(`https://api.whatsapp.com/send?phone=916383819028&text=${msg}`, '_blank');
+    }
+
+    /* --- BOOKING LOGIC --- */
+    function selectServiceForBooking(name, price, adv) {
+        let sel = document.getElementById('bService');
+        for(let i=0; i<sel.options.length; i++) {
+            if(sel.options[i].value === name) {
+                sel.selectedIndex = i;
+                break;
+            }
+        }
+        updatePaymentBreakdown();
+        document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updatePaymentBreakdown() {
+        let sel = document.getElementById('bService');
+        let opt = sel.options[sel.selectedIndex];
+        let price = parseInt(opt.getAttribute('data-price'));
+        let adv = parseInt(opt.getAttribute('data-adv'));
+        let rem = price - adv;
+
+        document.getElementById('dispTotal').textContent = `₹${price}`;
+        document.getElementById('dispAdvance').textContent = `₹${adv}`;
+        document.getElementById('dispRemaining').textContent = `₹${rem}`;
+    }
+
+    function checkCalendarStatus(dateStr) {
+        let badge = document.getElementById('dateAvailabilityBadge');
+        if(!dateStr) return;
+        
+        // Frontend Availability Simulation
+        let day = new Date(dateStr).getDate();
+        if(day % 5 === 0) {
+            badge.style.color = "#ff4d4d";
+            badge.innerHTML = "🔴 Status: Selected Date is FULLY BOOKED. Please choose another date.";
+        } else if(day % 3 === 0) {
+            badge.style.color = "#f1b814";
+            badge.innerHTML = "🟡 Status: LIMITED SLOTS available for this date!";
+        } else {
+            badge.style.color = "#25D366";
+            badge.innerHTML = "🟢 Status: Date is AVAILABLE for booking!";
+        }
+    }
+
+    function processBooking() {
+        let sel = document.getElementById('bService');
+        let opt = sel.options[sel.selectedIndex];
+        let service = opt.value;
+        let price = opt.getAttribute('data-price');
+        let adv = opt.getAttribute('data-adv');
+        let rem = price - adv;
+
+        let date = document.getElementById('bDate').value;
+        let time = document.getElementById('bTime').value;
+        let name = document.getElementById('bName').value;
+        let phone = document.getElementById('bPhone').value;
+        let location = document.getElementById('bLocation').value;
+
+        let msg = `Hello Gayathri! New Booking Confirmation Request:%0A%0A` +
+                  `*Service:* ${encodeURIComponent(service)}%0A` +
+                  `*Date & Time:* ${encodeURIComponent(date)} at ${encodeURIComponent(time)}%0A` +
+                  `*Client Name:* ${encodeURIComponent(name)}%0A` +
+                  `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                  `*Location:* ${encodeURIComponent(location)}%0A%0A` +
+                  `*Total Price:* ₹${price}%0A` +
+                  `*Advance Payable:* ₹${adv}%0A` +
+                  `*Remaining Due:* ₹${rem}`;
+
+        window.open(`https://api.whatsapp.com/send?phone=916383819028&text=${msg}`, '_blank');
+    }
+
+    // Initialize Breakdown on load
+    updatePaymentBreakdown();
+</script>
 </body>
 </html>
